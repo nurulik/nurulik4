@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>CV Nurulik</title>
+<meta name="description" content="My first PWA"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="shortcut icon" type="image/x-icon" href="img/cv.ico" />
+<!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigasi -->
+<nav class="teal lighten-1" role="navigation">
+<div class="nav-wrapper container">
+<a href="#" class="brand-logo" id="logo-container">My CV</a>
+<a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+
+<ul class="topnav right hide-on-med-and-down"></ul>
+<ul class="sidenav" id="nav-mobile"></ul>
+</div>
+</nav>
+<nav class="brand-logo topnav sidenav">
+
+</nav>
+<!-- Akhir Navigasi -->
+
+<div class="container" id="body-content"></div>
+
+<script src="js/materialize.min.js"></script>
+<script src="js/nav.js"></script>
+<script>
+// proses meng-register service worker
+	// jika sevice worker tidak ada di dalam navigator maka akan ditampilkan pesan bahwa "Service worker not supported"
+	if	(!('serviceWorker'	in	navigator))	{
+		console.log('Service	worker	not	supported');
+	}
+	
+	//jika sevice worker ada di dalam navigator maka service worker di-register dengan nama "nurul-sw.js"
+	navigator.serviceWorker.register('nurul-sw.js')
+	
+	//jika proses register berhasil maka akan ditampilkan pesan pada console "Registered"
+	.then(function()	{
+			console.log('Registered');
+	})
+	
+	//jika proses register gagal maka akan ditampilkan pesan pada console "Registration	failed:" beserta letak error
+	.catch(function(error)	{
+			console.log('Registration	failed:',	error);
+	});
+</script>
+</body>
+</html>
